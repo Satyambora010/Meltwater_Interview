@@ -16,9 +16,11 @@ const Expertise = () => {
     setFood,
   } = useContext<any>(UserContext);
   const handleNext = () => {
-    if (lifestyle) setExpertise([...expertise, "Lifestyle"]);
-    if (beauty) setExpertise([...expertise, "Beauty"]);
-    if (food) setExpertise([...expertise, "Food"]);
+    console.log(lifestyle, beauty, food);
+    if (lifestyle) expertise.push("Lifestyle");
+    if (beauty) expertise.push("Beauty");
+    if (food) expertise.push("Food");
+    console.log(expertise);
     navigate("/brands");
   };
   return (
