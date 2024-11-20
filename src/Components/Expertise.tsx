@@ -1,13 +1,20 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "./UserContext";
 
 const Expertise = () => {
   const navigate = useNavigate();
-  const { expertise, setExpertise, name } = useContext<any>(UserContext);
-  const [lifestyle, setLifestyle] = useState<boolean>(false);
-  const [beauty, setBeauty] = useState<boolean>(false);
-  const [food, setFood] = useState<boolean>(false);
+  const {
+    expertise,
+    setExpertise,
+    name,
+    lifestyle,
+    setLifestyle,
+    beauty,
+    setBeauty,
+    food,
+    setFood,
+  } = useContext<any>(UserContext);
   const handleNext = () => {
     if (lifestyle) setExpertise([...expertise, "Lifestyle"]);
     if (beauty) setExpertise([...expertise, "Beauty"]);
